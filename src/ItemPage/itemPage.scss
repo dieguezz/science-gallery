@@ -1,0 +1,28 @@
+/* TODO move img and p to classes and put them inside list */
+
+.itemPage {
+  background-color: black;
+      height: 100vh;
+    width: 100vw;
+}
+
+.item-image {
+  position: absolute;
+  animation: fade 250ms;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.item-description {
+  padding: 12px;
+  color: #5be71a;
+  font-size: 14px;
+  background-color: #000000a1;
+  text-shadow: 1px 1px 2px #0000006b;
+  position: absolute;
+  top: 0;
+}

@@ -1,0 +1,46 @@
+// Add spacing classes for margin and padding, ie:
+  // .m-t-4 === margin-top: 4px;
+
+$max: 36;
+$offset: 4; // 4px is the material grid spacing
+$unit: 'px';
+
+@mixin list-loop($className, $styleName) {
+  $i: 0;
+  @while $i <= $max {
+    @if (str-index($className, '-y-')) {
+      #{$className + $i} { 
+          #{$styleName}-top: #{$i + $unit};
+          #{$styleName}-bottom: #{$i + $unit};
+      }
+    } @else if (str-index($className, '-x-')) {
+      #{$className + $i} { 
+          #{$styleName}-left: #{$i + $unit};
+          #{$styleName}-right: #{$i + $unit};
+      }
+    } @else {
+      #{$className + $i} { 
+          #{$styleName}: #{$i + $unit};
+  
+      }
+    }
+    $i: $i + $offset;
+  }
+}
+
+// Margins
+@include list-loop('.m-t-', 'margin-top');
+@include list-loop('.m-r-', 'margin-right');
+@include list-loop('.m-b-', 'margin-bottom');
+@include list-loop('.m-l-', 'margin-left');
+@include list-loop('.m-x-', 'margin');
+@include list-loop('.m-y-', 'margin');
+@include list-loop('.m-', 'margin');
+// Paddings
+@include list-loop('.p-t-', 'padding-top');
+@include list-loop('.p-r-', 'padding-right');
+@include list-loop('.p-b-', 'padding-bottom');
+@include list-loop('.p-l-', 'padding-left');;
+@include list-loop('.p-x-', 'padding');
+@include list-loop('.p-y-', 'padding');
+@include list-loop('.p-', 'padding');
