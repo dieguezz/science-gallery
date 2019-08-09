@@ -25,7 +25,11 @@ export function Home() {
           height: "100%",
           position: "fixed",
           top: 0,
-          left: 0
+          left: 0,
+          backgroundColor: "transparent",
+          zIndex: 1,
+          pointerEvents: "none",
+          opacity: 0.5
         }}
       />
       <div className="form-control">
